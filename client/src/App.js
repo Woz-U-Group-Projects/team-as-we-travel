@@ -4,6 +4,7 @@ import './App.css';
 
 import PostBlog from './components/PostBlog';
 import NavBar from "./components/Navbar";
+import Blog from "./components/blog";
 
 class App extends Component {
   render() {
@@ -13,6 +14,8 @@ class App extends Component {
         <NavBar/>
           <PostBlog/>
         </header>
+
+        <Blog/>
       </div>
     );
   }
