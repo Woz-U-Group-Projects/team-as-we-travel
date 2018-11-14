@@ -1,17 +1,18 @@
 const express = require('express');
-
 const app = express();
+var mysql = require('mysql')
 
-app.get('/api/members',(req,res) =>{
-    const members = [
-        {id: 1, firstName: 'Luis'},
-        {id: 2, firstName: 'Desire'},
-        {id: 3, firstName: 'Andrew'},
-        {id: 4, firstName: 'Rob'}
-    ];
-    res.json(members);
-});
+var connection = mysql.createConnection({
+  host: 'blogs-comments.cjyyl4sipsn7.us-east-2.rds.amazonaws.com',
+  user: 'root',
+  password: '123456789',
+  database: 'aswetravel'
+})
 
-const port = 5000;
+connection.connect(function(err) {
+  if (err) throw err
+  console.log('You are now connected...')
+})
 
-app.listen(port, () => console.log(`Server started on ${port}`));
+
+

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Members from './components/members/members';
+
 import PostBlog from './components/PostBlog';
 import NavBar from "./components/Navbar";
 
