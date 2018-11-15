@@ -10,18 +10,22 @@ class Blog extends Component {
         }
     }
     componentDidMount(){
-        fetch('/api/blog')
+        fetch('/blog')
+
+        
         .then(res => res.json())
-        .then(blog => this.setState({blog}, () => console.log('blog fetched..', blog)));
+       .then(blog => this.setState({blog}, () => console.log('blog fetched..', blog)));
     }
+    
   render() {
     return (
       <div className="App">
         <h2>blog:</h2>
         <ul>
             {this.state.blog.map(blog => 
-                <li key={blog.id}>{blog.title} </li>
+                <li key={blog.id}> {blog.id} {blog.title} by {blog.username} </li>
                 )}
+                
         </ul>
       </div>
     );
