@@ -27,9 +27,25 @@ app.get('/blog', (req, res) => {
       console.log('Error while performing Query.');
       
 		}
-	});
+  });
 	
 });
+
+app.get('/comments', (req, res) => {
+  
+  connection.query('SELECT * from comments', function(err, rows, fields) {
+  if (!err) {
+        res.send(JSON.stringify(rows));
+  } else {
+    console.log('Error while performing Query.');
+    
+  }
+});
+
+});
+
+
+
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
 
