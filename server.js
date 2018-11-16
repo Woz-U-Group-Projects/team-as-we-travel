@@ -17,7 +17,19 @@ connection.connect(function(err) {
   console.log('You are now connected...')
 })
 
+//app to post to database
+app.post('/blogPost', function(req, res) {
+  // Get sent data.
+  var blog = req.body;
+  // Do a MySQL query.
+  var query = connection.query('INSERT INTO blog SET ?',  function(err, result) {
+    // Neat!
+  });
+  res.end('Success');
+});
 
+
+//api that gets all blogs
 app.get('/blog', (req, res) => {
 
 	connection.query('SELECT * from blog', function(err, rows, fields) {
@@ -31,6 +43,8 @@ app.get('/blog', (req, res) => {
 	
 });
 
+
+//api that gets all
 app.get('/comments', (req, res) => {
   
   connection.query('SELECT * from comments', function(err, rows, fields) {
