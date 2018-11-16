@@ -7,13 +7,15 @@ class PostBlog extends Component {
             <form>
                 <div>
                     <label>
-                        Username:
-                </label>
+                        Username: 
+                    
+            </label>
+        
                     <input></input>
                 </div>
                 <div>
                     <label>
-                        Blog:
+                        Blog: 
                 </label>
                     <textarea rows="15" cols="50"></textarea>
                 </div>
