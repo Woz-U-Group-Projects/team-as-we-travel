@@ -12,11 +12,15 @@ class PostBlog extends Component {
         // On submit of the form, send a POST request with the data to the server.
         fetch('/blogPost', { 
             method: 'POST',
-            data: {
-              userName: self.refs.userName,
-              blog: self.refs.blog,
-              title: self.refs.title
-            }
+            headers: {
+                "Content-Type": "application/json; charset=utf-8",
+                // "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: JSON.stringify({
+              userName: self.refs.userName.value,
+              blog: self.refs.blog.value,
+              title: self.refs.title.value
+            })
           })
           .then(function(response) {
             return response.json()
@@ -48,7 +52,7 @@ class PostBlog extends Component {
                         <textarea rows="15" cols="50" type="text" placeholder="Blog text goes here" ref="blog"/>
                 </div>
                 <div>
-                    <button>Post</button>
+                <input type="submit" value="Submit"/>
                 </div>
             </form>
         );
