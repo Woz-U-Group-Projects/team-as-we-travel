@@ -5,13 +5,8 @@ import './App.css';
 import PostBlog from './components/PostBlog';
 
 import Blog from "./components/blog/blog";
-import Background from './components/PostBlog/background.jpg';
 
-var sectionStyle = {
-    width: "100%",
-    height: "400px",
-    backgroundImage: "url(" + { Background } + ")"
-  };
+
 
 
 class App extends Component {

@@ -4,6 +4,7 @@ import './blog.css';
 
 class Blog extends Component {
     constructor() {
+      
         super();
         this.state = {
             blog: []
