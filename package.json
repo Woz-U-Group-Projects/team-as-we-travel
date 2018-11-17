@@ -12,12 +12,14 @@
   "author": "Robert Vanarsdale",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "concurrently": "^4.0.1",
     "express": "^4.16.4",
     "file-loader": "^2.0.0",
     "font-awesome": "^4.7.0",
     "mysql": "^2.16.0",
+    "react-axios": "^2.0.1",
     "url-loader": "^1.1.2"
   },
   "devDependencies": {

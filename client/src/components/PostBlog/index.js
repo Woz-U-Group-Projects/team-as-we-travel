@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
-
+import axios from 'react';
   
 
 class PostBlog extends Component {
@@ -9,6 +9,23 @@ class PostBlog extends Component {
         this.state = { user: {} };
         this.onSubmit = this.handleSubmit.bind(this);
       }
+    
+      state = {selectedFile: null}
+
+      fileChangedHandler = (event) => {
+        this.setState({selectedFile: event.target.files[0]})
+      }
+      
+      uploadHandler = () => { 
+        const formData = new FormData()
+        formData.append('myFile', this.state.selectedFile, this.state.selectedFile.name)
+        axios.post('/file-upload', formData)
+        console.log(this.state.selectedFile)
+        
+      }
+
+
+
       handleSubmit(e) {
         e.preventDefault();
         var self = this;
@@ -66,7 +83,9 @@ console.log(date);
                     </div>
 
                     <div className = "inputBox">
-                                 <input type="submit" value="Submit"/>
+                    <input type="file" onChange={this.fileChangedHandler}/>
+                           
+                                 <input type="submit" value="Submit" onClick={this.uploadHandler}/>
                     </div>
              </form>
 
