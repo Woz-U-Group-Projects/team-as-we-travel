@@ -24,7 +24,7 @@ app.post('/blogPost', function(req, res) {
   var blog = req.body;
   console.log(req.body);
   // Do a MySQL query.
-  var query = connection.query('INSERT INTO blog(title,username,blog) VALUES(?,?,?)', [blog.title,blog.userName,blog.blog, blog.date], function(err, result) {
+  var query = connection.query('INSERT INTO blog(title,username,blog,date) VALUES(?,?,?,NOW())', [blog.title,blog.userName,blog.blog, blog.date], function(err, result) {
     res.json(req.body);
     console.log(req.body);
   });

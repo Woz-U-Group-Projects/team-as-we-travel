@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
-
-  
+//import axios from 'react';
 
 class PostBlog extends Component {
     constructor() {
@@ -9,18 +8,27 @@ class PostBlog extends Component {
         this.state = { user: {} };
         this.onSubmit = this.handleSubmit.bind(this);
       }
+    
+      state = {selectedFile: null}
+
+      fileChangedHandler = (event) => {
+        this.setState({selectedFile: event.target.files[0]})
+      }
+      
+      uploadHandler = () => { 
+       // const formData = new FormData()
+       // formData.append('myFile', this.state.selectedFile, this.state.selectedFile.name)
+       // axios.post('/file-upload', formData)
+        console.log(this.state.selectedFile)
+        
+      }
+
+
+
       handleSubmit(e) {
         e.preventDefault();
         var self = this;
-        var date;
-date = new Date();
-date = date.getUTCFullYear() + '-' +
-    ('00' + (date.getUTCMonth()+1)).slice(-2) + '-' +
-    ('00' + date.getUTCDate()).slice(-2) + ' ' + 
-    ('00' + date.getUTCHours()).slice(-2) + ':' + 
-    ('00' + date.getUTCMinutes()).slice(-2) + ':' + 
-    ('00' + date.getUTCSeconds()).slice(-2);
-console.log(date);
+        
         // On submit of the form, send a POST request with the data to the server.
         fetch('/blogPost', { 
             method: 'POST',
@@ -32,7 +40,7 @@ console.log(date);
               userName: self.refs.userName.value,
               blog: self.refs.blog.value,
               title: self.refs.title.value,
-              date: date.value
+             
             })
           })
           .then(function(response) {
@@ -66,7 +74,9 @@ console.log(date);
                     </div>
 
                     <div className = "inputBox">
-                                 <input type="submit" value="Submit"/>
+                    <input type="file" onChange={this.fileChangedHandler}/>
+                           
+                                 <input type="submit" value="Submit" onClick={this.uploadHandler}/>
                     </div>
              </form>
 

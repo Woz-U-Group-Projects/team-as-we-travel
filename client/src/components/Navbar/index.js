@@ -1,0 +1,36 @@
+import React, { Component } from 'react';
+
+import './style.css';
+
+class NavBar extends Component {
+    
+        
+    
+  render() {
+    return (
+      
+<section className="sticky">
+<div id="main">
+       <nav>
+         <img id ="img" src="images/awtLogo.png" alt="Logo" width="200" height = "80"/>
+         
+                    
+         <input type="text" placeholder="Search.."/>
+         
+        
+         <ul>
+           <li><a href="/home">Home</a></li>
+           <li><a href="/home">Back</a></li>
+           <li><a href="/home">Sign-in</a></li>
+         </ul>
+       </nav>
+   
+</div>
+</section>
+
+    );
+  }
+};
+
+
+export default NavBar;

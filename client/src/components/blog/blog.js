@@ -29,8 +29,8 @@ class Blog extends Component {
     <div className="meta">
       <div className="photo" style ={ { backgroundImage:"url('https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg')"} }></div>
       <ul className="details">
-        <li className="author"><a>{blog.username}</a></li>
-        <li className="date">Aug. 24, 2015</li>
+        <li className="author"><a href="/blog">{blog.username}</a></li>
+        <li className="date">{blog.date}</li>
         <li className="tags">
           
         </li>
@@ -42,7 +42,7 @@ class Blog extends Component {
       
       <p className="overflow ellipsis"> {blog.blog}</p>
       <p className="read-more">
-        <a >Read More</a>
+        <a href="/more" >Read More</a>
       </p>
     </div>
   </div>
