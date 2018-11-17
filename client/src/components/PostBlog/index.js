@@ -47,16 +47,16 @@ console.log(date);
             
         
         <div className = "box">
-             <h2>Submit blog:</h2>
+             <h2>Submit Blog</h2>
              <form onSubmit={this.onSubmit}>
                                        <div className = "inputBox">
-                         
+                                       <label>Username: </label>
                                  <input type="text" name="" required ="" ref="userName"/>
-                                 <label>Username</label>
+                                 
 
-                        
+                        <label>Title:</label>
                                  <input type="text" name="" required ="" ref="title"/>         
-                                 <label>Title:</label>
+                               
                     </div>
 
                     <div className = "inputBox">
