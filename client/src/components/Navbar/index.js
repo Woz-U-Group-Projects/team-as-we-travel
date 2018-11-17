@@ -9,7 +9,7 @@ class NavBar extends Component {
   render() {
     return (
       
-
+<section className="sticky">
 <div id="main">
        <nav>
          <img id ="img" src="images/awtLogo.png" width="200" height = "80"/>
@@ -26,10 +26,11 @@ class NavBar extends Component {
        </nav>
    
 </div>
-
+</section>
 
     );
   }
 };
+
 
 export default NavBar;

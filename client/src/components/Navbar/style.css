@@ -58,3 +58,14 @@ nav ul li a {
     padding: 30px;
 
 }
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
+    border-radius:10px;
+    z-index:1000;
+  }
+  .sticky + .content {
+    padding-top: 60px;
+  }
