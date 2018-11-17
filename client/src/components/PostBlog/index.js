@@ -44,6 +44,7 @@ class PostBlog extends Component {
 
                 <div>
                     <label>Blog: </label>
+                    <br/>
                         <textarea rows="15" cols="50" type="text" placeholder="Blog text goes here" ref="blog"/>
                 </div>
                 <div>
