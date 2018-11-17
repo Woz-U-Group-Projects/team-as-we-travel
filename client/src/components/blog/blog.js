@@ -26,7 +26,7 @@ class Blog extends Component {
               
  <div className="blog-card" key={blog.id}>
     <div className="meta">
-      <div className="photo" ></div>
+      <div className="photo" style ={ { backgroundImage:"url('https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg')"} }></div>
       <ul className="details">
         <li className="author"><a>{blog.username}</a></li>
         <li className="date">Aug. 24, 2015</li>
