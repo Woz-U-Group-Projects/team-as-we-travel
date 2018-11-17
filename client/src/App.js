@@ -6,6 +6,8 @@ import PostBlog from './components/PostBlog';
 
 import Blog from "./components/blog/blog";
 
+import Footer from "./components/footer/footer";
+
 
 
 
@@ -22,6 +24,8 @@ class App extends Component {
         </header>
 
         <Blog/>
+
+        <Footer/>
         
       </div>
     )
