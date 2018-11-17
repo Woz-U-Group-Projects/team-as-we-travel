@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import './style.css';
+
+  
 
 class PostBlog extends Component {
     constructor() {
@@ -33,28 +36,31 @@ class PostBlog extends Component {
 
             
         
-        
-            <form onSubmit={this.onSubmit}>
-                <div>
-                    <label>Username: </label>
-                            <input type="text" placeholder="Username" ref="userName"/>
-                             
-                                <br/>
+        <div className = "box">
+             <h2>Submit blog:</h2>
+             <form onSubmit={this.onSubmit}>
+                                       <div className = "inputBox">
+                         
+                                 <input type="text" name="" required ="" ref="userName"/>
+                                 <label>Username</label>
 
-                    <label>Title: </label>
-                            <input type="text" placeholder="Blog Title" ref="title"/>         
+                        
+                                 <input type="text" name="" required ="" ref="title"/>         
+                                 <label>Title:</label>
+                    </div>
 
-                </div>
+                    <div className = "inputBox">
+                         
+                                
+                                 <textarea rows="15" cols="37" type="text" required ="" placeholder="Blog text goes here" ref="blog"/>
+                    </div>
 
-                <div>
-                    <label>Blog: </label>
-                    <br/    >
-                        <textarea rows="15" cols="50" type="text" placeholder="Blog text goes here" ref="blog"/>
-                </div>
-                <div>
-                <input type="submit" value="Submit"/>
-                </div>
-            </form>
+                    <div className = "inputBox">
+                                 <input type="submit" value="Submit"/>
+                    </div>
+             </form>
+
+        </div>
         );
     }
 }
