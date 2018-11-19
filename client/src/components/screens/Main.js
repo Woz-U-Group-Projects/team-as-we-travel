@@ -1,10 +1,9 @@
 import React from 'react';
 import SignIn from './SignIn';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./Home";
 import Blogs from './Blogs';
 import PostBlogs from './PostBlogs';
-import { Switch } from "react-router-dom";
 
 const Main = props =>
     <Router>
