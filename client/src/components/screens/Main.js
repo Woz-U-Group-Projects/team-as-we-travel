@@ -3,17 +3,17 @@ import SignIn from './SignIn';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import Blogs from './Blogs';
-import PostBlogs from './PostBlog';
+import PostBlogs from './PostBlogs';
 import { Switch } from "react-router-dom";
 
 const Main = props =>
-    <Switch>
+    <Router>
       <div>
         <Route path="/" component={Home} />
         <Route path="/signin" component={SignIn} />
         <Route path="/blogs" component={Blogs} />
-        <Route path="/postblog" component={PostBlogs} />
+        <Route path="/postblogs" component={PostBlogs} />
       </div>
-    </Switch>
+    </Router>
 
 export default Main;

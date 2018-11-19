@@ -16,8 +16,8 @@ class NavBar extends Component {
         
          <ul>
            <li><a href="/">Home</a></li>
-           <li><a href="/blogs">Blogs</a></li>
            <li><a href="/postblogs">Post a Blog</a></li>
+           <li><a href="/blogs">Blogs</a></li>
            <li><a href="/">Back</a></li>
            <li><a href="/signin">Sign-in</a></li>
          </ul>

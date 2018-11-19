@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import PostBlog from '../PostBlog/index';
-
+import PostBlog from '../PostBlog';
 
 class PostBlogs extends Component {
       render() {
         return (    
-          <div className="App">
+          <div>
             <PostBlog/>    
           </div>
         )
