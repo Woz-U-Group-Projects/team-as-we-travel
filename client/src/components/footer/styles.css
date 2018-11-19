@@ -1,0 +1,88 @@
+.footer {
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  background-color: #dcdfe2;
+  border: solid;
+  border-color: black;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+}
+
+.fa-github-square {
+  padding: 25px 14px;
+  font-size: 50px;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: black;
+}
+
+.fa-github-square:hover {
+  background-color: #358e9d;
+}
+
+.fa-linkedin-square {
+  padding: 25px 14px;
+  font-size: 50px;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: black;
+}
+
+.fa-linkedin-square:hover {
+  background-color: #358e9d;
+}
+
+.fa-facebook-square {
+  padding: 25px 14px;
+  font-size: 50px;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: black;
+}
+
+.fa-facebook-square:hover {
+  background-color: #358e9d;
+}
+
+.fa-twitter-square {
+  padding: 25px 14px;
+  font-size: 50px;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: black;
+}
+
+.fa-twitter-square:hover {
+  background-color: #358e9d;
+}
+
+.fa-instagram {
+  padding: 25px 14px;
+  font-size: 50px;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: black;
+}
+
+.fa-instagram:hover {
+  background-color: #358e9d;
+}

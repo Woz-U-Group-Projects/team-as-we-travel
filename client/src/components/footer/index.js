@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './footer.css';
+import './styles.css';
 
 
 
@@ -13,9 +13,7 @@ class Footer extends Component {
             <a href="https://www.facebook.com/" className="fa fa-facebook-square" ></a>
             <a href="https://twitter.com/" className="fa fa-twitter-square" ></a>
             <a href="https://www.instagram.com/" className="fa fa-instagram" ></a>
-
-
-                
+               
       </div>
     );
   }

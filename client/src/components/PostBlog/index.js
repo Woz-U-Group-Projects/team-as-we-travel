@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style.css';
+import './styles.css';
 //import axios from 'react';
 
 class PostBlog extends Component {
