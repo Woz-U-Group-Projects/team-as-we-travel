@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-
 import './style.css';
 
-class NavBar extends Component {
-    
-        
+class NavBar extends Component { 
     
   render() {
     return (
-      
 <section className="sticky">
 <div id="main">
        <nav>
@@ -19,9 +15,11 @@ class NavBar extends Component {
          
         
          <ul>
-           <li><a href="/home">Home</a></li>
-           <li><a href="/home">Back</a></li>
-           <li><a href="/home">Sign-in</a></li>
+           <li><a href="/">Home</a></li>
+           <li><a href="/blogs">Blogs</a></li>
+           <li><a href="/postblogs">Post a Blog</a></li>
+           <li><a href="/">Back</a></li>
+           <li><a href="/signin">Sign-in</a></li>
          </ul>
        </nav>
    

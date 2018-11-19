@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import Blog from '../blog/blog';
-import PostBlog from '../PostBlog';
 
 
-class Home extends Component {
+class Blogs extends Component {
       render() {
         return (    
-          <div>
-              <PostBlog/>
+          <div>    
+            <Blog/>      
           </div>
         )
+    
       }
     }
 
 
-export default Home;
+export default Blogs;
