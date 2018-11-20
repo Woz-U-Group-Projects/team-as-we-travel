@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 var mysql = require('mysql')
 const port = 5000;  
 
-
+app.use(bodyParser.json());
 
 var connection = mysql.createConnection({
   host: 'blogs-comments.cjyyl4sipsn7.us-east-2.rds.amazonaws.com',
@@ -21,11 +22,13 @@ connection.connect(function(err) {
 app.post('/blogPost', function(req, res) {
   // Get sent data.
   var blog = req.body;
+  console.log(req.body);
   // Do a MySQL query.
-  var query = connection.query('INSERT INTO blog SET ?',  function(err, result) {
-    // Neat!
+  var query = connection.query('INSERT INTO blog(title,username,blog,date) VALUES(?,?,?,NOW())', [blog.title,blog.userName,blog.blog, blog.date], function(err, result) {
+    res.json(req.body);
+    console.log(req.body);
   });
-  res.end('Success');
+  
 });
 
 
