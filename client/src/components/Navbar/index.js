@@ -20,6 +20,7 @@ class NavBar extends Component {
            <li><a href="/blogs">Blogs</a></li>
            <li><a href="/">Back</a></li>
            <li><a href="/signin">Sign-in</a></li>
+           <li><a href="/aboutus">About Us</a></li>
          </ul>
        </nav>
    
