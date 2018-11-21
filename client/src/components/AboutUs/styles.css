@@ -4,7 +4,7 @@ body {
     color: #666;
     position: relative;
     -webkit-font-smoothing: antialiased;
-    margin: 0;
+    padding-top: 50px;
   }
   
   * {
@@ -17,7 +17,9 @@ body {
     padding: 80px 0px 50px 0px;
     position: relative;
     display: block;
-    background: rgb(249, 249, 249);
+  
+    background-size: 100%;
+    
   }
   
   .row {
@@ -192,7 +194,7 @@ body {
     width: 150px;
     height: 150px;
     top: 3%;
-    speak: none;
+   
     font-style: normal;
     font-weight: normal;
     font-variant: normal;

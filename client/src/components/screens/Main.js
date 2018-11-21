@@ -9,7 +9,7 @@ import AboutUs from '../AboutUs';
 const Main = props =>
     <Router>
       <div>
-        <Route path="/" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/signin" component={SignIn} />
         <Route path="/blogs" component={Blogs} />
         <Route path="/postblogs" component={PostBlogs} />
