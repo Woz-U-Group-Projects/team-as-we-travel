@@ -40,7 +40,7 @@ class AboutUs extends Component {
         </li>
         <li>
           <div class="cbp_tmicon cbp_tmicon-mail">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQraSJVWlxwkNmXifM8dSJr2IzRHarvcNcO0L-wGjqOY-MFnrtH1w"></img>
+          <img alt ="img" src="images\Luis.jpg"/>
           </div>
           <div class="cbp_tmlabel wow fadeInRight animated">
             <h3>Luis Cuzquen </h3>
