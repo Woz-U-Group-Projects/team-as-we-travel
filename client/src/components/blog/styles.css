@@ -5,6 +5,8 @@
   body {
     background: #d2a87f;
     margin: 0rem;
+    padding-top: 200px;
+    margin-top: 5%;
   }
   .blog-card {
     display: flex;
