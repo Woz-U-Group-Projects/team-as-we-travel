@@ -20,7 +20,7 @@ router.get("/blog/:id", (req, res) => {
       include: [models.comments]
     })
     .then(blog => {
-      res.render("specificBlog", {
+      res.render("PostBlog", {
         Title: blog.Title,
         Blog: blog.Blog,
         UserName: blog.comments.UserName,
@@ -112,7 +112,7 @@ router.get("/comments:id", (req, res) => {
       include: [models.blog]
     })
     .then(comments => {
-      res.render("specificComment", {
+      res.render("Comments", {
         Comment: comments.Comment,
         UserName: comments.UserName
       });
