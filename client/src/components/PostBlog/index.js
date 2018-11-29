@@ -48,74 +48,74 @@ class PostBlog extends Component {
       });
   }
 
-  deleteHandler(i, e) {
-    e.preventDefault();
-    this.props.onDelete(this.props.blogPosts[i].id);
+  // deleteHandler(i, e) {
+  //   e.preventDefault();
+  //   this.props.onDelete(this.props.blogPosts[i].id);
 
-    onDelete(id);
-    {
-      deleteBlogPost(id)
-        .then(data => {
-          let blogPosts = this.state.blogPosts.filter(post => {
-            return id !== post.id;
-          });
+  //   onDelete(id);
+  //   {
+  //     deleteBlogPost(id)
+  //       .then(data => {
+  //         let blogPosts = this.state.blogPosts.filter(post => {
+  //           return id !== post.id;
+  //         });
 
-          this.setState(state => {
-            state.blogPosts = blogPosts;
-            return state;
-          });
-        })
-        .catch(err => {
-          console.error("err", err);
-        });
-    }
-  }
+  //         this.setState(state => {
+  //           state.blogPosts = blogPosts;
+  //           return state;
+  //         });
+  //       })
+  //       .catch(err => {
+  //         console.error("err", err);
+  //       });
+  //   }
+  // }
 
-  render() {
-    return (
-      <div className="box">
-        <h2>Submit Blog</h2>
-        <form onSubmit={this.onSubmit}>
-          <div className="inputBox">
-            <label>Username: </label>
-            <input type="text" name="" required="" ref="userName" />
+  // render() {
+  //   return (
+  //     <div className="box">
+  //       <h2>Submit Blog</h2>
+  //       <form onSubmit={this.onSubmit}>
+  //         <div className="inputBox">
+  //           <label>Username: </label>
+  //           <input type="text" name="" required="" ref="userName" />
 
-            <label>Title:</label>
-            <input type="text" name="" required="" ref="title" />
-          </div>
+  //           <label>Title:</label>
+  //           <input type="text" name="" required="" ref="title" />
+  //         </div>
 
-          <div className="inputBox">
-            <textarea
-              rows="15"
-              cols="37"
-              type="text"
-              required=""
-              placeholder="Blog text goes here"
-              ref="blog"
-            />
-          </div>
+  //         <div className="inputBox">
+  //           <textarea
+  //             rows="15"
+  //             cols="37"
+  //             type="text"
+  //             required=""
+  //             placeholder="Blog text goes here"
+  //             ref="blog"
+  //           />
+  //         </div>
 
-          <div className="inputBox">
-            <input type="file" onChange={this.fileChangedHandler} />
+  //         <div className="inputBox">
+  //           <input type="file" onChange={this.fileChangedHandler} />
 
-            <input type="submit" value="Submit" onClick={this.uploadHandler} />
-          </div>
-        </form>
+  //           <input type="submit" value="Submit" onClick={this.uploadHandler} />
+  //         </div>
+  //       </form>
 
-        <div>
-          <btn
-            onClick={this.deleteHandler.bind(this, i)}
-            className="btn btn-danger btn-sm"
-          >
-            Delete
-          </btn>
-          <button onclick="onDelete()" id="deleteButton">
-            Delete Blog Post
-          </button>
-        </div>
-      </div>
-    );
-  }
+  //       {/* <div>
+  //         <btn
+  //           onClick={this.deleteHandler.bind(this, i)}
+  //           className="btn btn-danger btn-sm"
+  //         >
+  //           Delete
+  //         </btn>
+  //         {/* <button onclick="onDelete()" id="deleteButton">
+  //           Delete Blog Post
+  //         </button> */}
+  //       </div>
+  // //     </div>
+  //   );
+  // }
 }
 
 export default PostBlog;
