@@ -24,9 +24,3 @@ yarn-error.log*
 
 .fusebox/
 client/src/components/members/
-package.json
-package-lock.json
-client/package-lock.json
-package-lock.json
-client/package-lock.json
-package.json
