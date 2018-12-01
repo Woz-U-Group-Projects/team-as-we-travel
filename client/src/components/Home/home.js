@@ -7,6 +7,7 @@ class Home extends Component {
     render() {
      
       return (
+        
         <div className="home">
             <header className="masthead text-center text-white d-flex">
       <div className="container my-auto">
