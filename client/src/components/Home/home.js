@@ -18,8 +18,8 @@ class Home extends Component {
             <hr/>
          </div>
           <div className="col-lg-8 mx-auto">
-            <p className="text-faded mb-5" >This is our super awesome blog app! This has been built with loads of awesome</p>
-            <p className="text-faded mb-10">technology. Below is some of the technology we have used in our coding!</p>
+            <p className="text-faded mb-5" >Join us and other travelors from around the world!</p>
+            <p className="text-faded mb-10">Below are the following technologies used to build this web app.</p>
           </div>
         </div>
       </div>
