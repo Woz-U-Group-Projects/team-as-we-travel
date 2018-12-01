@@ -1,6 +1,6 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
-  const comments = sequelize.define(
+  const blog = sequelize.define(
     "blog",
     {
       Id: {

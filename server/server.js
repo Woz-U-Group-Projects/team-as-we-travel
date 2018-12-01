@@ -3,90 +3,411 @@ const app = express();
 const bodyParser = require('body-parser');
 var mysql = require('mysql')
 const port = 5000;  
-
+var Sequelize = require('sequelize');
 app.use(bodyParser.json());
 
-var connection = mysql.createConnection({
+const sequelize = new Sequelize('aswetravel', 'root', '123456789', {
   host: 'blogs-comments.cjyyl4sipsn7.us-east-2.rds.amazonaws.com',
-  user: 'root',
-  password: '123456789',
-  database: 'aswetravel'
-})
-
-connection.connect(function(err) {
-  if (err) throw err
-  console.log('You are now connected...')
-})
-
-//app to post to database
-app.post('/blogPost', function(req, res) {
-  // Get sent data.
-  var blog = req.body;
-  console.log(req.body);
-  // Do a MySQL query.
-  var query = connection.query('INSERT INTO blog(title,username,blog,date) VALUES(?,?,?,NOW())', [blog.title,blog.userName,blog.blog, blog.date], function(err, result) {
-    res.json(req.body);
-    console.log(req.body);
-  });
-  
-});
-
-
-//api that gets all blogs
-app.get('/blog', (req, res) => {
-
-	connection.query('SELECT * from blog', function(err, rows, fields) {
-		if (!err) {
-        	res.send(JSON.stringify(rows));
-		} else {
-      console.log('Error while performing Query.');
-      
-		}
-  });
-	
-});
-
-
-//api that gets all
-app.get('/comments', (req, res) => {
-  
-  connection.query('SELECT * from comments', function(err, rows, fields) {
-  if (!err) {
-        res.send(JSON.stringify(rows));
-  } else {
-    console.log('Error while performing Query.');
-    
+  dialect: 'mysql',
+  pool: {
+    max: 10,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
   }
-});
+})
 
-});
+
+
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+    router.get('/blog', function(req, res, next) {
+      models.blogFound.findAll({}).then(blogAsPlainObject => {
+        const mappedBlogs = blogAsPlainObject.map(blog => ({
+          Id: blog.Id,
+          Username: blog.userName,
+          Title: blog.Title,
+          Date: blog.Date,
+  
+          
+        }));
+        res.send(JSON.stringify(mappedBlogs));
+      });
+    });
+  
+    
+    router.get("/blog/:id", (req, res) => {
+      let Id = parseInt(req.params.id);
+      models.blog
+        .find({
+          where: {
+            Id: id
+          },
+          include: [models.comments]
+        })
+        .then(blog => {
+          res.render("PostBlog", {
+            Title: blog.Title,
+            Blog: blog.Blog,
+            UserName: blog.comments.UserName,
+            Id: blog.Id
+          });
+        });
+    });
+    
+    router.put("/blog/:id", (req, res) => {
+      let id = parseInt(req.params.id);
+      models.blog
+        .update(
+          {
+            Title: req.body.title,
+            Blog: req.body.blog,
+            UserName: req.body.userName
+          },
+          {
+            where: {
+              Id: id
+            }
+          }
+        )
+        .then(result => {
+          res.send();
+        });
+    });
+    
+    router.delete("/blog/:id/delete", (req, res) => {
+      let Id = parseInt(req.params.id);
+      models.comments
+        .update(
+          {
+            Deleted: "true"
+          },
+          {
+            where: {
+              Id: id
+            }
+          }
+        )
+        .then(comments => {
+          models.blog
+            .update(
+              {
+                Deleted: "true"
+              },
+              {
+                where: {
+                  Id: id
+                }
+              }
+            )
+            .then(blog => {
+              res.redirect("/blog");
+            });
+        });
+    });
+    
+    router.get("/blog", function(req, res, next) {
+      models.blog
+        .findAll({
+          where: {
+            Deleted: null
+          }
+        })
+        .then(blogFound => {
+          res.render("blog", {
+            blog: blogFound
+          });
+        });
+    });
+    
+    router.get("/comments", function(req, res, next) {
+      models.comments.findAll({}).then(commentsFound => {
+        res.render("comments", {
+          comments: commentsFound
+        });
+      });
+    });
+    
+    router.get("/comments:id", (req, res) => {
+      let Id = parseInt(req.params.id);
+      models.comments
+        .find({
+          where: {
+            Id: id
+          },
+          include: [models.blog]
+        })
+        .then(comments => {
+          res.render("Comments", {
+            Comment: comments.Comment,
+            UserName: comments.UserName
+          });
+        });
+    });
+    
+    router.put("/comments/:id", (req, res) => {
+      let Id = parseInt(req.params.id);
+      models.comments
+        .update(
+          {
+            Comment: req.body.comment,
+            UserName: req.body.userName
+          },
+          {
+            where: {
+              Id: id
+            }
+          }
+        )
+        .then(result => {
+          res.send();
+        });
+    });
+    
+    router.delete("/comments/:id/delete", (req, res) => {
+      let Id = parseInt(req.params.id);
+      models.blog
+        .update(
+          {
+            Deleted: "true"
+          },
+          {
+            where: {
+              Id: id
+            }
+          }
+        )
+        .then(blog => {
+          models.comments
+            .update(
+              {
+                Deleted: "true"
+              },
+              {
+                where: {
+                  Id: id
+                }
+              }
+            )
+            .then(comments => {
+              res.redirect("/comments");
+            });
+        });
+    });
+    
+    router.get("/comments", function(req, res, next) {
+      models.comments
+        .findAll({
+          where: {
+            Deleted: null
+          }
+        })
+        .then(commentsFound => {
+          res.render("comments", {
+            comments: commentsFound
+          });
+        });
+    });
+    
+  
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+
+  router.get('/blog', function(req, res, next) {
+    models.blogFound.findAll({}).then(blogAsPlainObject => {
+      const mappedBlogs = blogAsPlainObject.map(blog => ({
+        Id: blog.Id,
+        Username: blog.userName,
+        Title: blog.Title,
+        Date: blog.Date,
+
+        
+      }));
+      res.send(JSON.stringify(mappedBlogs));
+    });
+  });
+
+  
+  router.get("/blog/:id", (req, res) => {
+    let Id = parseInt(req.params.id);
+    models.blog
+      .find({
+        where: {
+          Id: id
+        },
+        include: [models.comments]
+      })
+      .then(blog => {
+        res.render("PostBlog", {
+          Title: blog.Title,
+          Blog: blog.Blog,
+          UserName: blog.comments.UserName,
+          Id: blog.Id
+        });
+      });
+  });
+  
+  router.put("/blog/:id", (req, res) => {
+    let id = parseInt(req.params.id);
+    models.blog
+      .update(
+        {
+          Title: req.body.title,
+          Blog: req.body.blog,
+          UserName: req.body.userName
+        },
+        {
+          where: {
+            Id: id
+          }
+        }
+      )
+      .then(result => {
+        res.send();
+      });
+  });
+  
+  router.delete("/blog/:id/delete", (req, res) => {
+    let Id = parseInt(req.params.id);
+    models.comments
+      .update(
+        {
+          Deleted: "true"
+        },
+        {
+          where: {
+            Id: id
+          }
+        }
+      )
+      .then(comments => {
+        models.blog
+          .update(
+            {
+              Deleted: "true"
+            },
+            {
+              where: {
+                Id: id
+              }
+            }
+          )
+          .then(blog => {
+            res.redirect("/blog");
+          });
+      });
+  });
+  
+  router.get("/blog", function(req, res, next) {
+    models.blog
+      .findAll({
+        where: {
+          Deleted: null
+        }
+      })
+      .then(blogFound => {
+        res.render("blog", {
+          blog: blogFound
+        });
+      });
+  });
+  
+  router.get("/comments", function(req, res, next) {
+    models.comments.findAll({}).then(commentsFound => {
+      res.render("comments", {
+        comments: commentsFound
+      });
+    });
+  });
+  
+  router.get("/comments:id", (req, res) => {
+    let Id = parseInt(req.params.id);
+    models.comments
+      .find({
+        where: {
+          Id: id
+        },
+        include: [models.blog]
+      })
+      .then(comments => {
+        res.render("Comments", {
+          Comment: comments.Comment,
+          UserName: comments.UserName
+        });
+      });
+  });
+  
+  router.put("/comments/:id", (req, res) => {
+    let Id = parseInt(req.params.id);
+    models.comments
+      .update(
+        {
+          Comment: req.body.comment,
+          UserName: req.body.userName
+        },
+        {
+          where: {
+            Id: id
+          }
+        }
+      )
+      .then(result => {
+        res.send();
+      });
+  });
+  
+  router.delete("/comments/:id/delete", (req, res) => {
+    let Id = parseInt(req.params.id);
+    models.blog
+      .update(
+        {
+          Deleted: "true"
+        },
+        {
+          where: {
+            Id: id
+          }
+        }
+      )
+      .then(blog => {
+        models.comments
+          .update(
+            {
+              Deleted: "true"
+            },
+            {
+              where: {
+                Id: id
+              }
+            }
+          )
+          .then(comments => {
+            res.redirect("/comments");
+          });
+      });
+  });
+  
+  router.get("/comments", function(req, res, next) {
+    models.comments
+      .findAll({
+        where: {
+          Deleted: null
+        }
+      })
+      .then(commentsFound => {
+        res.render("comments", {
+          comments: commentsFound
+        });
+      });
+  });
+  
 
 
 
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
 
-//exports.create = function(id, blog, date, username, deleted, title ) {
- //   var values = [id, blog, date, username, deleted, title ]
-    
- //   db.get().query('INSERT INTO blog (id, blog, date, username, deleted, title) VALUES(?, ?, ?)', values, function(err, result) {
-  //    if (err) return done(err)
-   //   done(null, result.insertId)
-   // })
-  //}
- // exports.getAll = function(done) {
-  //  db.get().query('SELECT * FROM blog', function (err, rows) {
-   //   if (err) return done(err)
-  //    done(null, rows)
-  //  })
- // }
-
-  connection.query('SELECT * FROM blog', function(err, results) {
-    if (err) throw err
-    console.log(results[0].id)
-    console.log(results[0].title)
-    console.log(results[1].username)
-    console.log(results[0].username)
-    console.log(results[1].id)
-    console.log(results[1].title)
-  })

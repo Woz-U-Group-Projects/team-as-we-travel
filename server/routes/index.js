@@ -1,6 +1,7 @@
 const express = require("express");
 var router = express.Router();
 const mysql = require("mysql").verbose();
+const models = require('../models');
 
 router.get("/blog", function(req, res, next) {
   models.blog.findAll({}).then(blogFound => {
