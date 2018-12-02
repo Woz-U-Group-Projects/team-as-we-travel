@@ -1,6 +1,6 @@
 body {
-    font-family: Open Sans, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
     color: #666;
     position: relative;
     -webkit-font-smoothing: antialiased;
@@ -38,12 +38,12 @@ body {
   .sectiontitle {
     background-position: center;
     text-align: center;
-    min-height: 20px;
+    min-height: 50px;
   }
   
   .sectiontitle h2 {
-    font-size: 30px;
-    color: #3973ac;
+    font-size: 50px;
+    color: #006666;
     margin-bottom: 0px;
     padding-right: 10px;
     padding-left: 10px;
@@ -90,7 +90,7 @@ body {
     top: 3%;
     bottom: 0;
     width: 10px;
-    background: #324454;
+    background: #006666;
     left: 13%;
     height: 100%;
   }
@@ -127,7 +127,7 @@ body {
   
   .cbp_tmtimeline > li .cbp_tmlabel {
     margin: 0 0 15px 25%;
-    background: rgba(50, 68, 84, 1);
+    background: #006666;
     color: #FFF;
     padding: 30px;
     font-size: 1.2em;
@@ -140,7 +140,7 @@ body {
   }
   
   .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
-    background: #2B3A48;
+    background: #006666;
   }
   
   .cbp_tmtimeline > li .cbp_tmlabel h3 {
@@ -181,13 +181,13 @@ body {
     width: 0;
     position: absolute;
     pointer-events: none;
-    border-right-color: rgba(50, 68, 84, 1);
+    border-right-color: #006666;
     border-width: 10px;
     top: 70px;
   }
   
   .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
-    border-right-color: #2B3A48;
+    border-right-color:#006666;
   }
   
   .cbp_tmtimeline > li .cbp_tmicon {
