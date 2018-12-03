@@ -27,7 +27,9 @@ class AboutUs extends Component {
             <p class="projectParagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit obcaecati ipsa quae, iusto laudantium qui, nisi eum modi perspiciatis quasi facilis corporis iure soluta enim incidunt itaque aspernatur sequi tempora.</p>
             <a href="linkedin.com/in/robert-vanarsdale/" className="fa fa-linkedin-square"></a>
             <a href="https://github.com/RobVanProd" className="fa fa-github-square"></a>
-            <a href="www.robvanproduction.com https://github.com/RobVanProd" className="fa fa-home"></a>
+            <a href="https://www.facebook.com/RobVanProduction" className="fa fa-facebook-square"></a>
+            <a href="https://www.instagram.com/rob_vanproduction/" className="fa fa-instagram"></a>
+
 
           </div>
         </li>

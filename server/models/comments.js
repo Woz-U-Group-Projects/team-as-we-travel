@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
       userName: DataTypes.STRING,
       Comment: DataTypes.STRING,
       Deleted: DataTypes.INTEGER,
-      datePost: DataTypes.DATETIME,
-      Deleted: DataTypes.BOOLEAN
+      datePost: DataTypes.STRING,
+      
     },
     {
       timestamps: false

@@ -14,7 +14,10 @@ class Blog extends Component {
       .then(res => res.json())
       .then(blog =>
         this.setState({ blog }, () => console.log("blog fetched..", blog))
-      );
+      )
+      .catch(err => {
+        console.log('The error is:', err);
+      });
   }
 
   render() {
@@ -22,7 +25,7 @@ class Blog extends Component {
       <div className="App">
         <h2>Blog Articles: </h2>
         {this.state.blog.map(blog => (
-          <div className="blog-card" key={blog.id}>
+          <div className="blog-card" key={blog.Id}>
             <div className="meta">
               <div
                 className="photo"
@@ -33,17 +36,17 @@ class Blog extends Component {
               />
               <ul className="details">
                 <li className="author">
-                  <a href="/blog">{blog.username}</a>
+                  <a href="/blog">{blog.userName}</a>
                 </li>
-                <li className="date">{blog.date}</li>
+                <li className="date">{blog.Date}</li>
                 <li className="tags" />
               </ul>
             </div>
             <div className="description">
-              <h1>{blog.title}</h1>
-              <h2>{blog.id}</h2>
+              <h1>{blog.Title}</h1>
+              <h2>{blog.Id}</h2>
 
-              <p className="overflow ellipsis"> {blog.blog}</p>
+              <p className="overflow ellipsis"> {blog.Blog}</p>
               <p className="read-more">
                 <a href="/more">Read More</a>
               </p>
