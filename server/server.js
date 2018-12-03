@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 var models = require('./models');
 
 const sequelize = new Sequelize( {
-  host: 'blogs-comments.cjyyl4sipsn7.us-east-2.rds.amazonaws.com',
+  host: 'blog.cjyyl4sipsn7.us-east-2.rds.amazonaws.com',
   dialect: 'mysql',
   port:  '3306',
   database: 'aswetravel',
