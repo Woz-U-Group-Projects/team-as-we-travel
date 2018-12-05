@@ -24,18 +24,26 @@ class Home extends Component {
           </div>
         </div>
       </div>
-    </header>
-    <div className="gridRow">
-    <div classCol xs={6} md={4}>
-    <img alt ="img" src="images\react.png"/>
-    </div>
-    <div classCol xs={6} md={4}>
-    <img alt ="img" src="images\js.png"/>
-    </div>
-    <div classCol xs={6} md={4}>
-    <img alt ="img" src="images\html5.png"/>
-    </div>
+
+
+
+<div className="row">
+  <div className="column">
+    <img src="images\react.png" alt="img"/>
+  </div>
+  <div className="column">
+    <img src="images\js.png" alt="img" />
+  </div>
+  <div className="column">
+    <img src="images\html5.png" alt="img" />
+  </div>
 </div>
+
+
+     
+
+    </header>
+   
 </div>
                
     );
