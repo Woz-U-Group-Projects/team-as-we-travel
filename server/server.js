@@ -53,7 +53,7 @@ models.sequelize.sync().then(function() {
       })
       .spread(function(result, created) {
         if (created) {
-          res.redirect('/blog');
+          res.redirect('/blogs');
         } else {
           res.send('This blog already exists!');
         }
