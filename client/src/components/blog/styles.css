@@ -43,7 +43,7 @@
     left: 0;
     background-size: cover;
     background-position: center;
-    transition: transform 0.2s;
+    transition: transform 0.5s;
   }
   .blog-card .details, .blog-card .details ul {
     margin: auto;

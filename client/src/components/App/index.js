@@ -12,7 +12,7 @@ class App extends Component {
       <div>
         <NavBar style={{ position: 'fixed', top: 0 }} />
         </div>
-        <div>
+        <div id= "background">
         <Main/>
         </div>
         <div>

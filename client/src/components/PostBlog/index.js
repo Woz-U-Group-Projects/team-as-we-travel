@@ -6,7 +6,7 @@ import "./styles.css";
 class PostBlog extends Component {
   constructor() {
     super();
-    this.state = { user: {} };
+    this.state = { blogs: {} };
     this.onSubmit = this.handleSubmit.bind(this);
   }
 

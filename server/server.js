@@ -1,4 +1,5 @@
 const express = require('express');
+var router = express.Router();
 const app = express();
 const bodyParser = require('body-parser');
 var mysql = require('mysql')
@@ -7,65 +8,56 @@ var Sequelize = require('sequelize');
 app.use(bodyParser.json());
 var models = require('./models');
 
-const sequelize = new Sequelize( {
-  host: 'blog.cjyyl4sipsn7.us-east-2.rds.amazonaws.com',
-  dialect: 'mysql',
-  port:  '3306',
-  database: 'aswetravel',
-  username: 'root',
-  password: '123456789',
-    
-  });
-  
+models.sequelize.sync().then(function() {
+  console.log("DB Sync'd up!!");
+});
 
 
 
+//sequelize
+ // .authenticate()
+ // .then(() => {
+  //  console.log('Connection has been established successfully.');  
+   
+ // })
+  //.catch(err => {
+   // console.error('Unable to connect to the database:', err);
+  //});
 
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-    
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
-
-  app.get("/blog", function(req, res, next) {
-    models.blog
+  app.get("/blogs", function(req, res, next) {
+    models.blogs
       .findAll({
         where: {
           Deleted: null
         }
       })
-      .then(blog => {
-        res.json("blog", {
-          Id: Id,
-          Title: Title,
-          Blog: Blog
-        });
+      .then(blogs => {
+        res.send(blogs);
       });
   });
 
+
   app.post('/blogPost', (req, res) => {
-    models.blog
+    models.blogs
       .findOrCreate({
         where: {
          
-          Blog: req.body.Blog,
+          Blog: req.body.blog,
           
           userName:req.body.userName,
           
-          Title:req.body.Title
+          Title:req.body.title,
+          
+         
         
         
         }
       })
       .spread(function(result, created) {
         if (created) {
-          res.redirect('/blog');
+          res.redirect('/blogs');
         } else {
-          res.send('This artist already exists!');
+          res.send('This blog already exists!');
         }
       });
   });

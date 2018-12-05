@@ -1,10 +1,11 @@
 {
   "development": {
+    "host": "blog.cjyyl4sipsn7.us-east-2.rds.amazonaws.com",
+    "dialect": "mysql",
+    "port": "3306",
+    "database": "aswetravel",
     "username": "root",
-    "password": 123456789,
-    "database": "blogs-comments.cjyyl4sipsn7.us-east-2.rds.amazonaws.com",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "password": "123456789"
   },
   "test": {
     "username": "root",

@@ -3,10 +3,12 @@ body {
     margin-bottom: 10%;
     padding-top: 500px;
     font-family: sans-serif;
-    background-size: cover;
+    background-size: contain;
     background: url("background.jpg");
     background-size: 100%;
     background-attachment: fixed;
+    background-repeat:no-repeat;
+    background-color: #d2a87f;
 }
 .box {
     position: absolute;

@@ -5,14 +5,14 @@
   text-align: center;
   background-color: #dcdfe2;
   border: solid;
-  border-color: black;
+  border-top-color : black;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   height: 100px;
   z-index:1000;
-  margin-top: 5%;
+  margin-top: 10%;
 }
 
 .fa-github-square {

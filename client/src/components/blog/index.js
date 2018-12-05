@@ -10,11 +10,12 @@ class Blog extends Component {
     };
   }
   componentDidMount() {
-    fetch("/blog")
-      .then(res => res.json())
+    fetch("/blogs")
+      .then(res =>  res.json())
       .then(blog =>
         this.setState({ blog }, () => console.log("blog fetched..", blog))
-      )
+      
+        )
       .catch(err => {
         console.log('The error is:', err);
       });
@@ -24,7 +25,7 @@ class Blog extends Component {
     return (
       <div className="App">
         <h2>Blog Articles: </h2>
-        {this.state.blog.map(blog => (
+        {this.state.blog.map(blog=> (
           <div className="blog-card" key={blog.Id}>
             <div className="meta">
               <div
