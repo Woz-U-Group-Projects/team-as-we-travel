@@ -42,11 +42,13 @@ models.sequelize.sync().then(function() {
       .findOrCreate({
         where: {
          
-          Blog: req.body.Blog,
+          Blog: req.body.blog,
           
           userName:req.body.userName,
           
-          Title:req.body.Title
+          Title:req.body.title,
+          
+         
         
         
         }

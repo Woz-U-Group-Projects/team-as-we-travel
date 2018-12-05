@@ -48,6 +48,7 @@ nav ul li{
     display: inline-block;
     line-height: 80px;
     transition: 0.8s all;
+    font-size:2vw;
 }
 nav ul li:hover{
     background-color: #d2a87f;
@@ -67,5 +68,5 @@ nav ul li a {
     z-index:1000;
   }
   .sticky + .content {
-    padding-top: 60px;
+    padding-top: 80px;
   }

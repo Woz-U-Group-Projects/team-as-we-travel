@@ -15,7 +15,7 @@ class NavBar extends Component {
               height="80"
             />
 
-            <input type="text" placeholder="Search.." />
+            
 
             <ul>
               <li>
@@ -28,7 +28,7 @@ class NavBar extends Component {
                 <a href="/blogs">Blogs</a>
               </li>
               <li>
-                <a href="/">Back</a>
+                <a href="/">Search</a>
               </li>
               <li>
                 <a href="/aboutus">About Us</a>
