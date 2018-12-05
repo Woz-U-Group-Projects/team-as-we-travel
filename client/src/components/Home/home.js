@@ -19,14 +19,25 @@ class Home extends Component {
             <hr/>
          </div>
           <div className="col-lg-8 mx-auto">
-            <p className="text-faded mb-5" >Join us and other travelors from around the world!</p>
+            <p className="text-faded mb-5" >Join us and other travelers from around the world!</p>
             <p className="text-faded mb-10">Below are the following technologies used to build this web app.</p>
           </div>
         </div>
       </div>
     </header>
+    <div className="gridRow">
+    <div classCol xs={6} md={4}>
+    <img alt ="img" src="images\react.png"/>
+    </div>
+    <div classCol xs={6} md={4}>
+    <img alt ="img" src="images\js.png"/>
+    </div>
+    <div classCol xs={6} md={4}>
+    <img alt ="img" src="images\html5.png"/>
+    </div>
+</div>
+</div>
                
-      </div>
     );
   }
 };
