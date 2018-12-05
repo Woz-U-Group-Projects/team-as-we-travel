@@ -14,10 +14,29 @@ h1,
 p {
     text-align: center;
 }
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
 
-
-
-
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.column img {
+  
+  width:35%; /* you can use % */
+ 
+}
+.img-container {
+  float: left;
+  width: 33.33%; /* three containers (use 25% for four, and 50% for two, etc) */
+  padding: 5px; /* if you want space between the images */
+}
 
 @media (min-width: 768px) {
   header.masthead p {
@@ -43,6 +62,28 @@ p {
   }
 }
 
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+ }
+ 
+ /* Clear floats after image containers */
+ .row::after {
+  content: "";
+  clear: both;
+  display: table;
+ }
+ .column img {
+ 
+  width:35%; /* you can use % */
+ 
+ }
+ .img-container {
+  float: left;
+  width: 33.33%; /* three containers (use 25% for four, and 50% for two, etc) */
+  padding: 5px; /* if you want space between the images */
+ }
 
 
 

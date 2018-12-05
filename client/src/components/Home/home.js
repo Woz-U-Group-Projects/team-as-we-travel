@@ -41,12 +41,11 @@ class Home extends Component {
    <img src="images\css.png" alt="img" />
  </div>
  <div className="column">
-   <img src="images\sql.png" alt="img" />
- </div>
- <div className="column">
    <img src="images\express1.png" alt="img" />
  </div>
-  
+ <div className="column">
+   <img src="images\sql.png" alt="img" />
+ </div>
 </div>
 
 
@@ -59,5 +58,4 @@ class Home extends Component {
    );
  }
 };
-
 export default Home;
