@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   comments.associate = function(models) {
-    comments.hasMany(models.blog, {
+    comments.hasMany(models.blogs, {
       foreignKey: "Id"
     });
   };

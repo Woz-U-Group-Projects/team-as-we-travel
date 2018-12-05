@@ -1,7 +1,7 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
-  const blog = sequelize.define(
-    "blog",
+  const blogs = sequelize.define(
+    "blogs",
     {
       Id: {
         type: DataTypes.INTEGER,
@@ -20,11 +20,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
-  blog.associate = function(models) {
-    blog.belongsTo(models.comments, {
-      foreignKey: "blogId"
-    });
-  };
-  return blog;
+  //blogs.associate = function(models) {
+   // blogs.belongsTo(models.comments, {
+    //  foreignKey: "blogId"
+   // });
+ // };
+  return blogs;
 };
 
