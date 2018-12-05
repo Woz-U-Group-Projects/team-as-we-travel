@@ -37,6 +37,7 @@ models.sequelize.sync().then(function() {
   });
 
 
+
   app.post('/blogPost', (req, res) => {
     models.blogs
       .findOrCreate({
@@ -47,9 +48,8 @@ models.sequelize.sync().then(function() {
           userName:req.body.userName,
           
           Title:req.body.title,
-          
          
-        
+          Date: ('NOW'),
         
         }
       })
