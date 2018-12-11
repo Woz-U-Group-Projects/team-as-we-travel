@@ -41,7 +41,7 @@ class AboutUs extends Component {
             <h3>Desrie Horan</h3>
             <h4><i class="fa fa-flag"></i>Woz-U Full Stack Student</h4>
             <div class="date"><i class="fa fa-calendar"></i>April 2018-Current</div>
-            <p class="projectParagraph">I am a Full-Stack Web Development student. I am looking to gain more knowledge and skills to be able to work full time in this field as a developer. I have been studying HTML, JS, CSS, React, Angular, JQuery, Express, and Ionic. I am attending classes with WozU and freeCodeCamp. My goals are to build up a portfolio by designing websites through the skills I am learning. As well as continuing to update the design on my current jobs websites using WordPress. I would eventually like a full time job in web page development.</p>
+            <p class="projectParagraph">I am a Full-Stack Web Development student. I am looking to gain more knowledge and skills to be able to work full time in this field as a developer. I have been studying HTML, JS, CSS, React, Angular, JQuery, Express, and Ionic. My goals are to build up a portfolio by designing websites through the skills I am learning. As well as continuing to update the design on my current jobs websites using WordPress. I would eventually like a full time job in web page development.</p>
             <a href="https://www.linkedin.com/in/desrie-horan-96609a166/" className="fa fa-linkedin-square"> </a>
             <a href="https://www.facebook.com/dzianne" className="fa fa-facebook-square"> </a>
             <a href="https://github.com/Dzianne2" className="fa fa-github-square"> </a>
@@ -56,8 +56,7 @@ class AboutUs extends Component {
             <h3>Luis Cuzquen </h3>
             <h4><i class="fa fa-flag"></i>Woz-U Full Stack Student</h4>
             <div class="date"><i class="fa fa-calendar"></i>April 2018-Current</div>
-            <p class="projectParagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla labore atque alias ipsa, nam quod rerum repellat cumque, aliquam sequi vitae voluptatibus cum soluta incidunt tempore accusamus eius sed excepturi!Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Tempora natus veritatis aperiam repellendus dolor vel, expedita assumenda eos, mollitia quae ullam esse voluptas vero. Dolores culpa eaque vitae eum quibusdam?</p>
+            <p class="projectParagraph">Hi, I’m Luis Cuzquen, a website developer located in Phoenix, Arizona. I have experience with FrontEnd and BackEnd experience with JavaScript. Currently enrolled at Woz-U finishing my Full Stack Developer certification. I am originally from Peru.  When I am not coding you will find me hiking, traveling, or watching and supporting the local teams. If you have any questions or want to know more, please contact me at the following links.</p>
               <a href="https://www.linkedin.com/in/luis-cuzquen-1b7213158/" className="fa fa-linkedin-square"> </a>
             <a href="https://www.facebook.com/cuzquenl" className="fa fa-facebook-square"> </a>
             <a href="https://github.com/cuzqulu" className="fa fa-github-square"> </a>
