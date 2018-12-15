@@ -62,6 +62,20 @@ models.sequelize.sync().then(function() {
       });
   });
 
+  app.get("/blog/:id", (req, res) => {
+    let Id = parseInt(req.params.id);
+    models.blogs
+      .find({
+        where: {
+          Id
+        },
+      })
+      .then(blog => {
+        res.send(blog);
+      });
+  });
+  
+
  
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
