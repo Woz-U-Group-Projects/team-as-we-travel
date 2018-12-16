@@ -96,7 +96,7 @@ class PostBlog extends Component {
            </div>
 
            <div className="inputBox">
-             <input type="file" onChange={this.fileChangedHandler} />
+             {/* <input type="file" onChange={this.fileChangedHandler} /> */}
 
              <input type="submit" value="Submit" onClick={this.uploadHandler} />
            </div>

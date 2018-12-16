@@ -4,6 +4,7 @@ import Home from "./Home";
 import Blogs from "./Blogs";
 import PostBlogs from "./PostBlogs";
 import AboutUs from "../AboutUs";
+import OneBlog from "../oneblog";
 
 const Main = props => (
   <Router>
@@ -12,6 +13,7 @@ const Main = props => (
       <Route path="/blogs" component={Blogs} />
       <Route path="/postblogs" component={PostBlogs} />
       <Route path="/aboutus" component={AboutUs} />
+      <Route path="oneblog" component={OneBlog}/>
     </div>
   </Router>
 );
