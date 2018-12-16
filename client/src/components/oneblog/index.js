@@ -23,6 +23,7 @@ class OneBlog extends Component {
 
   render() {
     return (
+      
       <div className="App">
         <h2>Blog Articles: </h2>
         {this.state.blog.map(blog=> (
@@ -35,6 +36,7 @@ class OneBlog extends Component {
           </div>
         ))}
       </div>
+      
     );
   }
 }

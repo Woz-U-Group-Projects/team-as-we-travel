@@ -62,12 +62,13 @@ models.sequelize.sync().then(function() {
       });
   });
 
-  app.get("/blog/:id", (req, res) => {
-    let Id = parseInt(req.params.id);
+app.get("/blog/:id", (req, res) => {
+    let blogId = parseInt(req.params.id);
     models.blogs
       .find({
         where: {
-          Id
+          
+          Id: blogId
         },
       })
       .then(blog => {

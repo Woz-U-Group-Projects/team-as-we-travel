@@ -17,6 +17,7 @@ class PostBlog extends Component {
   };
 
   uploadHandler = () => {
+    
     // const formData = new FormData()
     // formData.append('myFile', this.state.selectedFile, this.state.selectedFile.name)
     // axios.post('/file-upload', formData)
@@ -98,7 +99,7 @@ class PostBlog extends Component {
            <div className="inputBox">
              {/* <input type="file" onChange={this.fileChangedHandler} /> */}
 
-             <input type="submit" value="Submit" onClick={this.uploadHandler} />
+             <input type="submit" value="Submit" href="/blogs" onClick={this.uploadHandler} />
            </div>
          </form>
 

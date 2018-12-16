@@ -1,6 +1,6 @@
 
 body {
-    margin-top: 5%;
+    margin-top: 15%;
     margin-bottom: 10%;
     padding-top: 500px;
     font-family: sans-serif;
@@ -13,11 +13,11 @@ body {
 }
 .box {
     position: absolute;
-    top: 12%;
-    left: 40%;
+    top: 15%;
+    left: 30%;
     transform: translate3d(-50%,-50%);
-    width: 400px;
-    padding: 40px;
+    width: auto;
+    padding: 60px;
         background: rgba(0, 0, 0, .8);
         box-sizing: border-box;
         box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
