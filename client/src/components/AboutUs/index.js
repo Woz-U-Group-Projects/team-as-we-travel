@@ -24,7 +24,7 @@ class AboutUs extends Component {
               <i class="fa fa-calendar"></i>April 2018 - Current
             </div>
             <h4><i class="fa fa-flag"></i>Woz-U Full Stack Student </h4>
-            <p class="projectParagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit obcaecati ipsa quae, iusto laudantium qui, nisi eum modi perspiciatis quasi facilis corporis iure soluta enim incidunt itaque aspernatur sequi tempora.</p>
+            <p class="projectParagraph">Full stack web developer base in NJ. I love photography and problem solving. Programming has been something i've wated to get into for a long time. If im not out taking photos im likely writing or modifying code.</p>
             <a href="linkedin.com/in/robert-vanarsdale/" className="fa fa-linkedin-square"> </a>
             <a href="https://github.com/RobVanProd" className="fa fa-github-square"> </a>
             <a href="https://www.facebook.com/RobVanProduction" className="fa fa-facebook-square"> </a>
